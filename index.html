@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/9783530849.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.0/web3.min.js"></script>
     <title>Ether Converter</title>
 </head>
 <body>
     <h1>Ether To USD Converter</h1>
     <div class="eth-converter">
+        <div id="wallet">Connect Wallet</div>
         <h3>Convert Ether to United States Dollar</h3>
         <div class="convert-fields">
             <div id="ether">
-                <input type="text" id="eth-input" placeholder="0" value="1">
                 <i class="fa-brands fa-ethereum"></i>
+                <input type="text" id="eth-input" placeholder="0" value="1">
             </div>
             <div><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
             <div id="dollars">
-                <input type="text" id="usd-input" placeholder="0">
                 <i class="fa-solid fa-dollar-sign"></i>
+                <input type="text" id="usd-input" placeholder="0">
             </div>
         </div>
         <button id="convert-button">Convert</button>
 
     </div>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
-<script src="./index.js" defer></script>
+<script type="module" src="./app.js"></script>
+<script type="module" src="./index.js" defer></script>
 </body>
 </html>
