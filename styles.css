@@ -25,14 +25,31 @@ h3 {
 
 .eth-converter {
     margin: auto;
-    width: 90%;
+    width: 87%;
     margin-top: 80px;
     background-color: #00006e;
     padding: 50px 20px 50px 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 1px #1b37b4;
-    color: #fff;
+    color: #b6bff3;
     text-align: center;
+    margin-left: -10px;
+}
+
+#wallet {
+    position: fixed;
+    top: 45px;
+    right: 50px;
+    background-color:#010983;
+    border-radius:25px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#wallet:hover {
+    background-color:#1b37b4;
 }
 
 .eth-converter:hover {
@@ -42,6 +59,7 @@ h3 {
 .convert-fields {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     margin-top: 50px;
 }
 
@@ -59,11 +77,12 @@ input[type="text"], input[type="text"]:focus {
     border:none;
     font-size: 25px;
     outline: none;
+    padding-left: 5px;
 }
 
 
 #ether, #dollars {
-    width: 400px;
+    width: 90%;
     height: 60px;
     border-radius:30px;
     background-color:#c9c9fd;
@@ -71,9 +90,12 @@ input[type="text"], input[type="text"]:focus {
     font-size: 20px;
     display: flex;
     align-items:center;
-    justify-content: space-between;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.fa-arrow-right-arrow-left {
+    margin: 10px;
 }
 
 #ether i, #dollars i {
@@ -102,9 +124,7 @@ label {
     margin-top: 10px;
 }
 
-i {
-    margin-top: 15px;
-}
+
 #progress {
     display: none;
     height: 20px;
@@ -131,6 +151,21 @@ i {
     .eth-converter {
         min-width: 800px;
         width: 70%;
+        margin-left: auto;
     }
 
+    .convert-fields {
+        flex-direction: row;
+    }
+
+    #ether, #dollars {
+        width: 400px;
+        height: 55px;
+        justify-content: start;
+    }
+
+    .fa-arrow-right-arrow-left {
+        margin: 0;
+        margin-top: 20px;
+    }
 }
