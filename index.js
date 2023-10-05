@@ -1,4 +1,4 @@
-import { sendTokensToUser } from "./app.js";
+// import { sendTokensToUser } from "./app.js";
 
 async function queryApi() {
   try {
@@ -51,10 +51,13 @@ async function convertDollarsToEth(value) {
 }
 
 function removeCurrencyAndNonNumeric(inputString) {
-  // Regex pattern to match currency symbols and any character that is not a number (0-9)
-  const pattern = /[^0-9.]/g; // Allow decimal points
+  // Use a regular expression to match numbers (including negative) and decimal points
+  const pattern = /[-+]?([0-9]*\.[0-9]+|[0-9]+)/g;
 
-  const cleanedString = inputString.replace(pattern, "");
+  const cleanedArray = inputString.match(pattern);
+
+  // Join the matched numbers and decimal points back into a single string
+  const cleanedString = cleanedArray ? cleanedArray.join("") : "";
 
   return cleanedString;
 }
@@ -63,7 +66,7 @@ let eth = document.getElementById("eth-input");
 let dollars = document.getElementById("usd-input");
 
 function convertEthToUsd() {
-  let ethValue = parseInt(removeCurrencyAndNonNumeric(eth.value));
+  let ethValue = removeCurrencyAndNonNumeric(eth.value);
   if (!ethValue) {
     eth.focus();
     return;
@@ -76,7 +79,7 @@ function convertEthToUsd() {
 eth.addEventListener("input", convertEthToUsd);
 
 function convertUsdToEth() {
-  let dollarsValue = parseInt(removeCurrencyAndNonNumeric(dollars.value));
+  let dollarsValue = removeCurrencyAndNonNumeric(dollars.value);
   if (!dollarsValue) {
     dollars.focus();
     return;
