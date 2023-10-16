@@ -19,16 +19,12 @@ h4 {
     font-family: 'Croissant One', cursive;
 }
 
-h3 {
-    margin-top: -20px;
-}
-
 .eth-converter {
     margin: auto;
     width: 87%;
     margin-top: 80px;
     background-color: #00006e;
-    padding: 50px 20px 50px 20px;
+    padding: 10px 20px 50px 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 1px #1b37b4;
     color: #b6bff3;
