@@ -91,6 +91,36 @@ function convertUsdToEth() {
 }
 dollars.addEventListener("input", convertUsdToEth);
 
+
+function isMobileDevice() {
+  return window.innerWidth < 768;
+}
+
+const arrows = document.getElementById("arrows");
+let isClicked = false;
+if (isMobileDevice()) {
+  arrows.innerHTML = `<i class="fa-solid fa-arrows-up-down"></i>`;
+  const mobileDropdowns = document.querySelectorAll(".mobile-dropdown");
+  mobileDropdowns.forEach(function (dropdown) {
+    const trigger = dropdown.querySelector("a");
+    const menu = dropdown.querySelector(".mobile-dropdown-menu");
+
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the link from navigating
+
+      if (isClicked) {
+        menu.style.display = "none"; // Hide the menu
+      } else {
+        menu.style.display = "block"; // Show the menu
+      }
+
+      isClicked = !isClicked; // Toggle the menu visibility state
+    });
+  });
+} else {
+  arrows.innerHTML = `<i class="fa-solid fa-arrow-right-arrow-left"></i>`;
+}
+
 window.addEventListener("DOMContentLoaded", convertEthToUsd);
 document.getElementById("convert-button").addEventListener("click", () => {
   if (eth.value) {
@@ -101,3 +131,5 @@ document.getElementById("convert-button").addEventListener("click", () => {
     alert("Enter Ether or Dollars to convert");
   }
 });
+
+
