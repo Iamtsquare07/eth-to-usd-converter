@@ -91,7 +91,6 @@ function convertUsdToEth() {
 }
 dollars.addEventListener("input", convertUsdToEth);
 
-
 function isMobileDevice() {
   return window.innerWidth < 768;
 }
@@ -131,5 +130,3 @@ document.getElementById("convert-button").addEventListener("click", () => {
     alert("Enter Ether or Dollars to convert");
   }
 });
-
-
