@@ -1,5 +1,3 @@
-// import { sendTokensToUser } from "./app.js";
-
 async function queryApi() {
   try {
     // Fetch the current price of Ether (ETH) in dollars from CoinGecko
