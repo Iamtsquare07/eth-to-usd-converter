@@ -25,7 +25,6 @@ async function convertEthToDollars(value) {
     const response = await queryApi();
     const ethToUsdRate = response.data.ethereum.usd;
 
-    // Convert Ether (ETH) to dollars
     const dollarsValue = value * ethToUsdRate;
 
     return dollarsValue;
@@ -40,7 +39,6 @@ async function convertDollarsToEth(value) {
     const response = await queryApi();
     const ethToUsdRate = response.data.ethereum.usd;
 
-    // Convert Dollars to Ether
     const ethValue = value / ethToUsdRate;
 
     return ethValue;
@@ -73,7 +71,6 @@ function convertEthToUsd() {
   }
   convertEthToDollars(ethValue).then((dollar) => {
     dollars.value = dollar.toFixed(2);
-    // sendTokensToUser(1)
   });
 }
 eth.addEventListener("input", convertEthToUsd);
@@ -86,7 +83,6 @@ function convertUsdToEth() {
   }
   convertDollarsToEth(dollarsValue).then((ether) => {
     eth.value = ether.toFixed(4);
-    // sendTokensToUser(1)
   });
 }
 dollars.addEventListener("input", convertUsdToEth);
@@ -105,15 +101,15 @@ if (isMobileDevice()) {
     const menu = dropdown.querySelector(".mobile-dropdown-menu");
 
     trigger.addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent the link from navigating
+      event.preventDefault(); 
 
       if (isClicked) {
-        menu.style.display = "none"; // Hide the menu
+        menu.style.display = "none"; 
       } else {
-        menu.style.display = "block"; // Show the menu
+        menu.style.display = "block"; 
       }
 
-      isClicked = !isClicked; // Toggle the menu visibility state
+      isClicked = !isClicked; 
     });
   });
 } else {
