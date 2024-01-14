@@ -1,4 +1,4 @@
-# ETH To USD Converter v1.1.1
+# ETH To USD Converter v1.1.3
 
 This tool allows users to convert Ether into USD and offers them the opportunity to receive a complimentary token upon its usage.
 
